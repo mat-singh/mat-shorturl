@@ -59,7 +59,7 @@ app.route('/list')
         const db = client.db('matdb');
         collection = db.collection('urlshort');
         var list = [];
-         var cursor = collection.find();
+        var cursor = collection.find();
         cursor.forEach(
           function(obj) {
             list.push(obj);
@@ -149,7 +149,7 @@ function handleNew(oURL, res) {
       });
     } else {
       console.log('Invalid url');
-      sObj.error = 'Incorrect url. Make sure you have a valid protocol and real site'
+      sObj.error = 'Incorrect url. Make sure the url is formatted correctly and it is a real site'
       res.send(JSON.stringify(sObj));
     }
   });
@@ -177,8 +177,8 @@ app.use(function(req, res, next){
           return res.redirect(mydoc.original_url);
         } else {
           console.log('URL not in DB');
-          var sObj = {}
-          sObj.error = 'Incorrect usage of the API (or) short URL not in Database'
+          var sObj = {};
+          sObj.error = 'Incorrect usage of the API (or) short URL not in Database';
           res.send(JSON.stringify(sObj));
         }
       });
