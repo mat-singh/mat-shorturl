@@ -1,2 +1,1 @@
-# mat-shorturl
-Service to shorten your url
+# Backend Challenges boilerplate - package.json
